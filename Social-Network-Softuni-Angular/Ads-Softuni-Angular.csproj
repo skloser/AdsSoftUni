@@ -66,10 +66,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="packages.config" />
     <Content Include="libs\angular.min.js.map" />
     <Content Include="libs\angular-route.min.js.map" />
     <Content Include="libs\jquery-1.9.1.min.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,6 +109,11 @@
     <Content Include="libs\jquery-1.9.1.js" />
     <Content Include="libs\jquery-1.9.1.min.js" />
     <Content Include="scripts\home\home.js" />
+    <Content Include="scripts\login\login.js" />
+    <Content Include="scripts\register\register.js" />
+    <Content Include="libs\toastr.js" />
+    <Content Include="libs\toastr.min.js" />
+    <Content Include="scripts\_references.js" />
     <Content Include="templates\home\home.html" />
     <Content Include="templates\home\login.html" />
     <Content Include="templates\home\register.html" />

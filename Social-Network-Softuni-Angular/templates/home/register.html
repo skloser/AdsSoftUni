@@ -1,6 +1,33 @@
-﻿
-<ol>
-    <li ng-repeat="test in tests">
-        {{test}}
-    </li>
-</ol>
+﻿<div>
+    <form name="RegisterForm" role="form" style="width:30%;">
+        <div class="form-group">
+            <label class="form-control label label-primary">Username</label>
+            <input type="text" class="form-control" ng-model="user.Username" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Password</label>
+            <input type="password" class="form-control" ng-model="user.Password" required ng-minlength="2" ng-maxlength="100" />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Confirm Password</label>
+            <input type="password" class="form-control" ng-model="user.ConfirmPassword" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Name</label>
+            <input type="text" class="form-control" ng-model="user.Name" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Email</label>
+            <input type="email" class="form-control" ng-model="user.Email" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Phone</label>
+            <input type="text" class="form-control" ng-model="user.Phone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">Town</label>
+            <select ng-options="town.name for town in towns track by town.id" ng-model="user.id"></select>
+        </div>
+        <input type="submit" ng-click="submitRegisterForm(user)" class="btn btn-primary" ng-disabled="RegisterForm.$invalid" value="Register"/>
+    </form>
+</div>
