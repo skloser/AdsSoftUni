@@ -13,7 +13,7 @@ app.controller("RegisterController", ["$scope", "TownsManager", "$location", "Re
             $location.path("/login").replace();
         },
         function (error) {
-            toastr.error("Could not register!");
+            toastr.error("Could not register!"); 
         });
     }
 }]);
