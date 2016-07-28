@@ -1,4 +1,5 @@
-﻿/// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular-mocks.js" />
+﻿/// <autosync enabled="true" />
+/// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular-mocks.js" />
 /// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular-route.js" />
 /// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular-route.min.js" />
 /// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular.js" />

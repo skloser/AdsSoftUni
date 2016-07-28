@@ -1,6 +1,8 @@
-﻿/// <reference path="c:\users\k.bagashev\documents\visual studio 2015\Projects\Social-Network-Softuni-Angular\Social-Network-Softuni-Angular\libs/angular.js" />
+﻿/// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/toastr.js" />
+/// <reference path="c:\users\k.bagashev\documents\visual studio 2015\Projects\Social-Network-Softuni-Angular\Social-Network-Softuni-Angular\libs/angular.js" />
 /// <reference path="c:\users\k.bagashev\documents\visual studio 2015\Projects\Social-Network-Softuni-Angular\Social-Network-Softuni-Angular\libs/angular-route.js" />
 /// <reference path="C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\libs/angular.js" />
+/// <reference path="_references.js" />
 
 "use strict";
 
@@ -22,6 +24,9 @@ app.config(function ($routeProvider) {
          })
     .otherwise({ redirectTo: "/" });
 });
+//app.config(function ($locationProvider) {
+//    $locationProvider.html5Mode({ enabled: true, requireBase: false });
+//});
 
 app.constant("AdsHostUrl", "http://softuni-ads.azurewebsites.net/api/");
 app.factory("TownsManager", ["$http", "AdsHostUrl", "$q", function ($http, AdsHostUrl, $q) {
@@ -45,10 +50,20 @@ app.factory("TownsManager", ["$http", "AdsHostUrl", "$q", function ($http, AdsHo
     };
 
 }]);
-app.factory("LoginManager", ["$http", function ($http) {
+app.factory("LoginManager", ["$http", "$q", "AdsHostUrl", function ($http, $q, AdsHostUrl) {
 
-    function logIn() {
+    function logIn(user) {
+        var deferred = $q.defer();
 
+        $http.post(AdsHostUrl + "user/login", user)
+        .then(function (success) {
+            deferred.resolve(success.data);
+        },
+        function (error) {
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
     }
 
     return {

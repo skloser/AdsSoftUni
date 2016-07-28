@@ -1,9 +1,9 @@
 ﻿<div>
-    <form name="LoginForm">
-        <label class="form-control label">Username</label>
-        <input type="text" class="form-control"/>
-        <label class="form-control label">Password</label>
-        <input type="text" class="form-control"/>
-        <input type="submit" ng-click="submitLoginForm()"/>
+    <form name="LoginForm" role="form" style="width:30%;">
+        <label class="form-control label label-primary">Username</label>
+        <input type="text" class="form-control" ng-model="user.userName" />
+        <label class="form-control label label-primary">Password</label>
+        <input type="text" class="form-control" ng-model="user.password" />
+        <input type="submit" ng-click="submitLoginForm(user)" class="btn btn-primary" ng-disabled="LoginForm.$invalid" value="Register" />
     </form>
 </div>

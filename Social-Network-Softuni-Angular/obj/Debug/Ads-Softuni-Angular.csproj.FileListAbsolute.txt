@@ -37,4 +37,3 @@ C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\Ad
 C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\obj\Debug\Social-Network-Softuni-Angular.dll
 C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\obj\Debug\Social-Network-Softuni-Angular.pdb
-C:\Users\k.bagashev\Documents\Visual Studio 2015\Projects\Ads-Softuni-Angular\AdsSoftUni\Social-Network-Softuni-Angular\obj\Debug\Ads-Softuni-Angular.csprojResolveAssemblyReference.cache
