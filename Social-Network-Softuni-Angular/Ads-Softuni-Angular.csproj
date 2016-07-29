@@ -74,6 +74,9 @@
     <Content Include="libs\jquery-1.9.1.min.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="libs\angular-cookies.js" />
+    <Content Include="libs\angular-cookies.min.js" />
+    <Content Include="libs\angular-cookies.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,6 +97,7 @@
     <Content Include="libs\angular-route.min.js" />
     <Content Include="libs\angular.js" />
     <Content Include="libs\angular.min.js" />
+    <Content Include="scripts\listings\createNew.js" />
     <Content Include="scripts\app.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -114,9 +118,10 @@
     <Content Include="libs\toastr.js" />
     <Content Include="libs\toastr.min.js" />
     <Content Include="scripts\_references.js" />
+    <Content Include="templates\listings\createNew.html" />
     <Content Include="templates\home\home.html" />
-    <Content Include="templates\home\login.html" />
-    <Content Include="templates\home\register.html" />
+    <Content Include="templates\users\login.html" />
+    <Content Include="templates\users\register.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

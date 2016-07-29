@@ -1,0 +1,38 @@
+﻿<div>
+    <div>
+        Publish new Ad
+    </div>
+    <form name="CreateNewAdForm" role="form" style="width:30%;">
+        <div class="form-group">
+            <label class="form-control label label-primary">
+                Title:
+            </label>
+            <input type="text" id="title" ng-model="ad.title" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">
+                Text:
+            </label>
+            <input type="text" id="title" ng-model="ad.text" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">
+                Image:
+            </label>
+            <input type="text" id="title" ng-model="ad.imageDataUrl" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">
+                Category
+            </label>
+            <select ng-options="category.id as category.name for category in categories" ng-model="ad.category"></select>
+        </div>
+        <div class="form-group">
+            <label class="form-control label label-primary">
+                Town
+            </label>
+            <select ng-options="town.id as town.name for town in towns" ng-model="ad.town"></select>
+        </div>
+        <input type="submit" value="Create new ad" ng-disabled="CreateNewAdForm.$invalid" ng-click="createNewAd(ad)" class="form-control btn btn-primary"/>
+    </form>
+</div>

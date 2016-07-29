@@ -6,7 +6,7 @@
 
 "use strict";
 
-var app = angular.module("SocialNetwork", ["ngRoute"]);
+var app = angular.module("SocialNetwork", ["ngRoute", "ngCookies"]);
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -15,13 +15,17 @@ app.config(function ($routeProvider) {
             controller: "HomeController"
         })
         .when("/login", {
-            templateUrl: "templates/home/login.html",
+            templateUrl: "templates/users/login.html",
             controller: "LoginController"
         })
          .when("/register", {
-             templateUrl: "templates/home/register.html",
+             templateUrl: "templates/users/register.html",
              controller: "RegisterController"
          })
+        .when("/createNewAdd", {
+            templateUrl: "templates/listings/createNew.html",
+            controller: "CreateNewAddController"
+        })
     .otherwise({ redirectTo: "/" });
 });
 //app.config(function ($locationProvider) {
@@ -29,6 +33,51 @@ app.config(function ($routeProvider) {
 //});
 
 app.constant("AdsHostUrl", "http://softuni-ads.azurewebsites.net/api/");
+
+app.factory("CategoryManager", ["$http", "$q", "AdsHostUrl", function ($http, $q, AdsHostUrl) {
+
+    function getAllCategories() {
+        var deferred = $q.defer();
+
+        $http.get(AdsHostUrl + "categories").then(function (success) {
+            deferred.resolve(success.data);
+        },
+        function (error) {
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    }
+
+    return {
+        getAllCategories: getAllCategories
+    };
+}]);
+
+app.factory("AdsManager", ["$http", "$q", "AdsHostUrl", "$location", "$cookies",
+    function ($http, $q, AdsHostUrl, $location, $cookies) {
+
+        function createNewAd(ad) {
+
+            var deferred = $q.defer();
+
+            $http.post(AdsHostUrl + "user/ads", ad, { headers: { "Authorization": $cookies.get("login_access_token") } })
+            .then(function (success) {
+                deferred.resolve(success.data);
+                toastr.success("Successfully create the new ad!");
+                $location.path("/").replace();
+            },
+            function (error) {
+                toastr.error("Error, could not create ad!");
+                deferred.reject(error);
+            });
+        }
+
+        return {
+            createNewAd: createNewAd
+        };
+    }]);
+
 app.factory("TownsManager", ["$http", "AdsHostUrl", "$q", function ($http, AdsHostUrl, $q) {
 
     function getTowns() {
